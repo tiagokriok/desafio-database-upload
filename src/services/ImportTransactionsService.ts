@@ -49,7 +49,7 @@ class ImportTransactionsService {
     const existentCategoriesTitles = existentCategories.map((category: Category) => { category.title})
 
     const addCategoryTitles = categories
-      .filter(category => !existentCategoriesTitles.includes())
+      .filter(category => !existentCategoriesTitles.includes(category))
       .filter((value,index,self) => self.indexOf(value) === index);
 
     const newCategories = categoriesRepository.create(
